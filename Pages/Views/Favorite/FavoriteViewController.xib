@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FavoriteViewController" customModule="MovieApp" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="vAy-DN-g4f" id="Fhv-N1-exl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jdh-fq-noK">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vAy-DN-g4f">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <color key="backgroundColor" red="0.047058823530000002" green="0.047058823530000002" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.047058823530000002" green="0.047058823530000002" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="sectionIndexBackgroundColor" red="0.047058823530000002" green="0.047058823530000002" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.047058823530000002" green="0.047058823530000002" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="vAy-DN-g4f" secondAttribute="bottom" id="C91-ry-mKi"/>
+                        <constraint firstItem="vAy-DN-g4f" firstAttribute="leading" secondItem="Jdh-fq-noK" secondAttribute="leading" id="S0d-qQ-69z"/>
+                        <constraint firstAttribute="trailing" secondItem="vAy-DN-g4f" secondAttribute="trailing" id="eqh-7Q-K96"/>
+                        <constraint firstItem="vAy-DN-g4f" firstAttribute="top" secondItem="Jdh-fq-noK" secondAttribute="top" id="ids-Eb-Uxh"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.047058823530000002" green="0.047058823530000002" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="tintColor" red="0.047058823530000002" green="0.047058823530000002" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Jdh-fq-noK" secondAttribute="trailing" id="Nfq-2D-Tv6"/>
+                <constraint firstItem="Jdh-fq-noK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hMx-2R-jwa"/>
+                <constraint firstItem="Jdh-fq-noK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kuo-VK-gU6"/>
+                <constraint firstAttribute="bottom" secondItem="Jdh-fq-noK" secondAttribute="bottom" id="scQ-1i-ccf"/>
+            </constraints>
+            <point key="canvasLocation" x="77" y="74"/>
+        </view>
+    </objects>
+</document>

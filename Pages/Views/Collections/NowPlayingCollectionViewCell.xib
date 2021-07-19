@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NowPlayingCollectionViewCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="129" height="204"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="129" height="204"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9o-CB-g3q">
+                        <rect key="frame" x="0.0" y="0.0" width="129" height="204"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="teQ-zv-DLD">
+                                <rect key="frame" x="0.0" y="0.0" width="129" height="204"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.047058823530000002" green="0.047058823530000002" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="teQ-zv-DLD" firstAttribute="width" secondItem="p9o-CB-g3q" secondAttribute="width" id="0vN-xy-JEF"/>
+                            <constraint firstItem="teQ-zv-DLD" firstAttribute="height" secondItem="p9o-CB-g3q" secondAttribute="height" id="AR0-nn-vOr"/>
+                            <constraint firstAttribute="trailing" secondItem="teQ-zv-DLD" secondAttribute="trailing" id="BMg-3X-j7Y"/>
+                            <constraint firstItem="teQ-zv-DLD" firstAttribute="top" secondItem="p9o-CB-g3q" secondAttribute="top" id="S9f-p8-g39"/>
+                            <constraint firstItem="teQ-zv-DLD" firstAttribute="leading" secondItem="p9o-CB-g3q" secondAttribute="leading" id="nSV-Fg-Kji"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="p9o-CB-g3q" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="N9Q-pk-UwE"/>
+                <constraint firstAttribute="bottom" secondItem="p9o-CB-g3q" secondAttribute="bottom" id="nca-Ye-RcF"/>
+                <constraint firstAttribute="trailing" secondItem="p9o-CB-g3q" secondAttribute="trailing" id="oQ0-hg-thy"/>
+                <constraint firstItem="p9o-CB-g3q" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vNf-2B-bLG"/>
+            </constraints>
+            <size key="customSize" width="129" height="204"/>
+            <connections>
+                <outlet property="imageBG" destination="teQ-zv-DLD" id="MWT-DI-MlM"/>
+            </connections>
+            <point key="canvasLocation" x="-56" y="107"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="default" width="1732" height="1732"/>
+    </resources>
+</document>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="139" id="KGk-i7-Jjw" customClass="FavoriteTableViewCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="416" height="139"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="416" height="139"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fOE-Uo-EeB">
+                        <rect key="frame" x="0.0" y="0.0" width="416" height="139"/>
+                        <color key="backgroundColor" red="0.047058823530000002" green="0.047058823530000002" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SlK-8c-WPf">
+                        <rect key="frame" x="20" y="105" width="376" height="24"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.047058823530000002" green="0.047058823530000002" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="tintColor" red="0.047058823530000002" green="0.047058823530000002" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="SlK-8c-WPf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="JPn-kr-Old"/>
+                    <constraint firstAttribute="trailing" secondItem="SlK-8c-WPf" secondAttribute="trailing" constant="20" id="QiU-a8-6Gz"/>
+                    <constraint firstAttribute="bottom" secondItem="SlK-8c-WPf" secondAttribute="bottom" constant="10" id="SDD-Px-MUc"/>
+                    <constraint firstAttribute="bottom" secondItem="fOE-Uo-EeB" secondAttribute="bottom" id="a9A-tx-QMj"/>
+                    <constraint firstItem="fOE-Uo-EeB" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="b9o-pt-D4F"/>
+                    <constraint firstItem="fOE-Uo-EeB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="sou-98-LP2"/>
+                    <constraint firstItem="fOE-Uo-EeB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tGt-1Y-QrU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.047058823530000002" green="0.047058823530000002" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="imageBG" destination="fOE-Uo-EeB" id="voq-Uk-PcR"/>
+                <outlet property="titleMovie" destination="SlK-8c-WPf" id="0cL-1q-9jd"/>
+            </connections>
+            <point key="canvasLocation" x="-202.89855072463769" y="88.058035714285708"/>
+        </tableViewCell>
+    </objects>
+</document>

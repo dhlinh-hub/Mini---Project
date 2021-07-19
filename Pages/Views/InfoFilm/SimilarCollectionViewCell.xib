@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SimilarCollectionViewCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="146"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="100" height="146"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M8Q-0f-55m">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="146"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="VVc-KG-kc7">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="146"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VVc-KG-kc7" firstAttribute="top" secondItem="M8Q-0f-55m" secondAttribute="top" id="HXr-ED-umb"/>
+                            <constraint firstAttribute="bottom" secondItem="VVc-KG-kc7" secondAttribute="bottom" id="YcV-ZZ-Xml"/>
+                            <constraint firstItem="VVc-KG-kc7" firstAttribute="leading" secondItem="M8Q-0f-55m" secondAttribute="leading" id="rXf-yL-jIY"/>
+                            <constraint firstAttribute="trailing" secondItem="VVc-KG-kc7" secondAttribute="trailing" id="rt4-TC-pnD"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="M8Q-0f-55m" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="2dF-Vh-MU6"/>
+                <constraint firstAttribute="bottom" secondItem="M8Q-0f-55m" secondAttribute="bottom" id="CJ4-Ta-AUY"/>
+                <constraint firstItem="M8Q-0f-55m" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="beX-5N-rSk"/>
+                <constraint firstAttribute="trailing" secondItem="M8Q-0f-55m" secondAttribute="trailing" id="s8j-8Y-sua"/>
+            </constraints>
+            <size key="customSize" width="100" height="146"/>
+            <connections>
+                <outlet property="imageMovie" destination="VVc-KG-kc7" id="PsO-1Z-Kdv"/>
+            </connections>
+            <point key="canvasLocation" x="-56.521739130434788" y="105.80357142857143"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="2" width="1280" height="720"/>
+    </resources>
+</document>

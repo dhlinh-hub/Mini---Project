@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UpComingCollectionViewCell" id="gTV-IL-0wX" customClass="UpComingCollectionViewCell" customModule="MovieApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="158" height="103"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="158" height="103"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Osy-Lc-6Ep">
+                        <rect key="frame" x="0.0" y="0.0" width="158" height="103"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="wQT-z2-bl7">
+                                <rect key="frame" x="0.0" y="0.0" width="158" height="82.5"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9e-qK-EzB">
+                                <rect key="frame" x="0.0" y="82.5" width="153" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.047058823530000002" green="0.047058823530000002" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wQT-z2-bl7" secondAttribute="trailing" id="400-k1-ZQ8"/>
+                            <constraint firstAttribute="trailing" secondItem="U9e-qK-EzB" secondAttribute="trailing" constant="5" id="B9B-3H-HYy"/>
+                            <constraint firstItem="wQT-z2-bl7" firstAttribute="top" secondItem="Osy-Lc-6Ep" secondAttribute="top" id="Kao-X7-6dh"/>
+                            <constraint firstItem="U9e-qK-EzB" firstAttribute="top" secondItem="wQT-z2-bl7" secondAttribute="bottom" id="Lhd-Eq-iFw"/>
+                            <constraint firstItem="U9e-qK-EzB" firstAttribute="leading" secondItem="Osy-Lc-6Ep" secondAttribute="leading" id="aUu-9o-Yrc"/>
+                            <constraint firstItem="wQT-z2-bl7" firstAttribute="height" secondItem="Osy-Lc-6Ep" secondAttribute="height" multiplier="0.8" id="dyL-fm-VUz"/>
+                            <constraint firstItem="wQT-z2-bl7" firstAttribute="leading" secondItem="Osy-Lc-6Ep" secondAttribute="leading" id="lSd-Bc-J8c"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Osy-Lc-6Ep" secondAttribute="bottom" id="3dn-UB-2Ix"/>
+                <constraint firstAttribute="trailing" secondItem="Osy-Lc-6Ep" secondAttribute="trailing" id="8ua-N5-0XJ"/>
+                <constraint firstItem="Osy-Lc-6Ep" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="c9O-eg-lmo"/>
+                <constraint firstItem="Osy-Lc-6Ep" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="fEN-gm-wdP"/>
+            </constraints>
+            <size key="customSize" width="158" height="103"/>
+            <connections>
+                <outlet property="imageBG" destination="wQT-z2-bl7" id="Jgd-IS-dDR"/>
+                <outlet property="titleLabel" destination="U9e-qK-EzB" id="1Sq-uD-rWg"/>
+            </connections>
+            <point key="canvasLocation" x="113.04347826086958" y="55.915178571428569"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="default" width="1732" height="1732"/>
+    </resources>
+</document>
