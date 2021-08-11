@@ -107,6 +107,7 @@ class UserViewModel {
       Database.database().reference().child("user").child("\(user.id ?? "")").child("currentFollowing").setValue(true)
 
     })
+
     
     Database.database().reference().child("user").child("\(user.id ?? "")").child("follower").child(uid!).setValue(uid!)
 //

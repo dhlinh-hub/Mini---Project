@@ -20,7 +20,7 @@ class SeachTableViewCell: UITableViewCell {
             if let data = data {
                 if let path = data.poster_path {
                     let url = URL(string: "https://image.tmdb.org/t/p/original/\(path)")
-                    imageMovie.kf.setImage(with: url , placeholder: UIImage(named: "holder"))
+                    imageMovie.kf.setImage(with: url)
                 }
                 
                 titleMovie.text = "\(data.title!)"

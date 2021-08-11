@@ -68,7 +68,7 @@ class CollectionsViewModel {
   public func getUpComing(){
     delegate?.showLoading()
     
-    let urlRequest = URL(string: "https://api.themoviedb.org/3/movie/upcoming?api_key=999fdf2ff164b33bed4aea14fa846a19&language=en-US&page=7" )
+    let urlRequest = URL(string: "https://api.themoviedb.org/3/movie/upcoming?api_key=999fdf2ff164b33bed4aea14fa846a19&language=en-US&page=1" )
     let queue = DispatchQueue(label: "com.queue", qos: .background, attributes: .concurrent)
     
     queue.async {

@@ -19,7 +19,7 @@ class DiscoverCollectionViewCell: UICollectionViewCell {
             if let data = data {
                 if let path = data.poster_path {
                     let url = URL(string: "https://image.tmdb.org/t/p/original/\(path)")
-                    imageBackground.kf.setImage(with: url , placeholder: UIImage(named: "holder"))
+                    imageBackground.kf.setImage(with: url )
                     
                 }
                 

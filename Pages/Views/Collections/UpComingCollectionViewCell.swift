@@ -17,7 +17,7 @@ class UpComingCollectionViewCell: UICollectionViewCell {
             if let data = data {
                 if let path = data.poster_path {
                     let url = URL(string: "https://image.tmdb.org/t/p/original/\(path)")
-                    imageBG.kf.setImage(with: url , placeholder: UIImage(named: "holder"))
+                    imageBG.kf.setImage(with: url)
                 }
                 titleLabel.text = "\(data.title!)"
             }

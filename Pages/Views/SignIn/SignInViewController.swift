@@ -86,8 +86,9 @@ class SignInViewController: UIViewController {
       self.setupAlert()
     })
     
-    
+
   }
+  
   
   
   func gotoSignUpController() {

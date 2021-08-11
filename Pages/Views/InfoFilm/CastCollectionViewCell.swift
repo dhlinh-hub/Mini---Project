@@ -12,7 +12,6 @@ class CastCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageCast: UIImageView!
     @IBOutlet weak var nameCast: UILabel!
     @IBOutlet weak var directorCast: UILabel!
-    
     @IBOutlet weak var containerView: UIView!
     var data : Cast? {
         didSet {
