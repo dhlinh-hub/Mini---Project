@@ -49,7 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wpartial-availability"
   __weak SFSafariViewController *_safariVC;
-  SFAuthenticationSession *_authenticationVC;
+    ASWebAuthenticationSession *_authenticationVC;
   ASWebAuthenticationSession *_webAuthenticationVC;
 #pragma clang diagnostic pop
 }
