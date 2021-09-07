@@ -5,7 +5,7 @@
 import UIKit
 
 
-public protocol DuangDataSource: class {
+public protocol DuangDataSource: AnyObject {
     
     /// emmmmm, just like UITableViewCell....
     ///
@@ -15,7 +15,7 @@ public protocol DuangDataSource: class {
     
 }
 
-public protocol DuangDelegate: class {
+public protocol DuangDelegate: AnyObject {
     
     /// Called when the controller completes initialization in PageMenu's subController
     ///
@@ -46,13 +46,13 @@ public protocol DuangDelegate: class {
 // -------⚠️ The following part is used in the `DuangBody` layer, so similar to above--------------
 // ------------------------------------------------------------------------------------------------
 
-public protocol DuangMenuDelegate: class {
+public protocol DuangMenuDelegate: AnyObject {
     func controllerHasInitialized(_ ctl: UIViewController)
     func currentControllerAfterDraggin(_ ctl: UIViewController, page: Int)
     func currentControlBarItemAfterDraggin(_ item: UIView?)
 }
 
-public protocol DuangControlBarDelegate: class {
+public protocol DuangControlBarDelegate: AnyObject {
     func duangControlBarSelectOn(_ page: Int)
     func currentDuangControlBarItem(_ item: UIView?)
 }
