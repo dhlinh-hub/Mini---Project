@@ -127,21 +127,13 @@ class InfoFilmViewController: UIViewController {
         ratingButton.layer.cornerRadius = 5
         addHandleIcon()
         
-        
-        
     }
     internal func saveRating (_ rate : Double ) {
         starRating = rate
         print(starRating!)
-        
     }
     
     private func addHandleIcon() {
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hiddenVideo))
-        imageBG.addGestureRecognizer(tapGesture)
-        imageBG.isUserInteractionEnabled = true
-        
         let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(handleBookMark))
         tagButton.addGestureRecognizer(tapGesture2)
         tagButton.isUserInteractionEnabled = true
@@ -179,10 +171,6 @@ class InfoFilmViewController: UIViewController {
         stateSimilarMovieLabel.isHidden = false
     }
     
-    @objc private func hiddenVideo() {
-        playerVIew.isHidden = true
-        
-    }
     
     @IBAction private func onCheck(_ sender: Any) {
         guard let url = URL(string: "https://www.amazon.com/") else { return }
@@ -197,8 +185,14 @@ class InfoFilmViewController: UIViewController {
         guard let vd = videos else { return}
         playerVIew.isHidden = false
         playerVIew.load(withVideoId: vd.key!)
+
     }
-    
+    @IBAction func hiddenPlayerView(_ sender: Any) {
+        playerVIew.isHidden = true
+        playerVIew.stopVideo()
+
+    }
+
     internal  func bookMarkIsSelect () {
         tagButton.image = UIImage(systemName: "bookmark.fill")?.withRenderingMode(.alwaysOriginal)
         UIView.transition(with: tagButton, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
@@ -209,8 +203,6 @@ class InfoFilmViewController: UIViewController {
         UIView.transition(with: tagButton, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
         
     }
-    
-    
     
     //HandleBook Mark and save data on FireBase
     @objc private func handleBookMark() {
@@ -306,16 +298,14 @@ extension InfoFilmViewController : UICollectionViewDelegateFlowLayout , UICollec
             })
         }
     }
-    
-    
 }
 
 extension InfoFilmViewController : YTPlayerViewDelegate {
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
-        
+        playerView.playVideo()
     }
     func playerView(_ playerView: YTPlayerView, didChangeTo quality: YTPlaybackQuality) {
-        playerView.isHidden = true
+//        playerView.isHidden = true
     }
 }
 

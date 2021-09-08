@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -237,6 +236,7 @@
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <gestureRecognizers/>
                             <constraints>
                                 <constraint firstItem="Mm7-n5-Hc7" firstAttribute="top" secondItem="h6N-rs-iaF" secondAttribute="bottom" constant="20" id="1hh-pM-3DE"/>
                                 <constraint firstAttribute="trailing" secondItem="aBM-om-xQW" secondAttribute="trailing" constant="40" id="2A8-D6-7jP"/>
@@ -286,6 +286,9 @@
                                 <constraint firstItem="aBM-om-xQW" firstAttribute="top" secondItem="pjc-ic-YIi" secondAttribute="bottom" constant="-80" id="yaL-6r-smJ"/>
                                 <constraint firstAttribute="height" constant="1700" id="zx7-T9-sZ7"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="Wsc-BH-DjD" appends="YES" id="AeD-UV-Ipk"/>
+                            </connections>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -352,6 +355,11 @@
             </constraints>
             <point key="canvasLocation" x="128.98550724637681" y="90.401785714285708"/>
         </view>
+        <tapGestureRecognizer id="Wsc-BH-DjD">
+            <connections>
+                <action selector="hiddenPlayerView:" destination="-1" id="xgX-xq-c9Z"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <designables>
         <designable name="h6N-rs-iaF">

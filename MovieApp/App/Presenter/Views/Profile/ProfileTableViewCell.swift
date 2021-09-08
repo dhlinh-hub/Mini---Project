@@ -9,7 +9,7 @@ import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
     
-    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
