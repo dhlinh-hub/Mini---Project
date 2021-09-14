@@ -116,7 +116,6 @@ class InfoFilmViewController: UIViewController {
     
     
     private func setupConfig() {
-        
         tagButton.layer.cornerRadius = 25
         videoButton.layer.cornerRadius = 25
         checkButton.layer.cornerRadius = 15
@@ -125,6 +124,11 @@ class InfoFilmViewController: UIViewController {
         imageBG.layer.cornerRadius = 10
         collectionView.backgroundColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 0)
         ratingButton.layer.cornerRadius = 5
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hiddenPlayerView))
+        imageBG.addGestureRecognizer(tapGesture)
+        imageBG.isUserInteractionEnabled = true
+        
         addHandleIcon()
         
     }
@@ -186,14 +190,15 @@ class InfoFilmViewController: UIViewController {
         playerVIew.isHidden = false
         playerVIew.load(withVideoId: vd.key!)
 
+
     }
-    @IBAction func hiddenPlayerView(_ sender: Any) {
+    @objc private func hiddenPlayerView() {
+        print("didtap")
         playerVIew.isHidden = true
         playerVIew.stopVideo()
-
     }
 
-    internal  func bookMarkIsSelect () {
+    internal func bookMarkIsSelect () {
         tagButton.image = UIImage(systemName: "bookmark.fill")?.withRenderingMode(.alwaysOriginal)
         UIView.transition(with: tagButton, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
         
@@ -303,10 +308,13 @@ extension InfoFilmViewController : UICollectionViewDelegateFlowLayout , UICollec
 extension InfoFilmViewController : YTPlayerViewDelegate {
     func playerViewDidBecomeReady(_ playerView: YTPlayerView) {
         playerView.playVideo()
+
+        
     }
     func playerView(_ playerView: YTPlayerView, didChangeTo quality: YTPlaybackQuality) {
 //        playerView.isHidden = true
     }
+    
 }
 
 

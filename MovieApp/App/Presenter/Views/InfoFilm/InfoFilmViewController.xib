@@ -110,6 +110,7 @@
                                 </label>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="pjc-ic-YIi">
                                     <rect key="frame" x="60" y="160.5" width="294" height="448"/>
+                                    <gestureRecognizers/>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aBM-om-xQW">
                                     <rect key="frame" x="324" y="528.5" width="50" height="50"/>
@@ -286,9 +287,6 @@
                                 <constraint firstItem="aBM-om-xQW" firstAttribute="top" secondItem="pjc-ic-YIi" secondAttribute="bottom" constant="-80" id="yaL-6r-smJ"/>
                                 <constraint firstAttribute="height" constant="1700" id="zx7-T9-sZ7"/>
                             </constraints>
-                            <connections>
-                                <outletCollection property="gestureRecognizers" destination="Wsc-BH-DjD" appends="YES" id="AeD-UV-Ipk"/>
-                            </connections>
                         </view>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -355,11 +353,6 @@
             </constraints>
             <point key="canvasLocation" x="128.98550724637681" y="90.401785714285708"/>
         </view>
-        <tapGestureRecognizer id="Wsc-BH-DjD">
-            <connections>
-                <action selector="hiddenPlayerView:" destination="-1" id="xgX-xq-c9Z"/>
-            </connections>
-        </tapGestureRecognizer>
     </objects>
     <designables>
         <designable name="h6N-rs-iaF">
