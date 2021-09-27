@@ -15,7 +15,6 @@ protocol InfoUserViewModelDelegate : AnyObject {
   func updateCountFollower ( _ index : Int)
   func showLoading()
   func hideLoading()
-  
 }
 
 class InfoUserViewModel {
@@ -34,7 +33,6 @@ class InfoUserViewModel {
             let json = JSON(movies)
             let movie = Movies(json)
             self.data.append(movie!)
-            
             self.delegate?.updateListFavorite(self.data)
           }
           
@@ -43,18 +41,17 @@ class InfoUserViewModel {
       }
     })
   }
+    
   public func fetchCountFollowingUser( _ user : Users) {
     ref.child("\(user.id!)").child("follwing").observe(.value, with: {(snapshot) in
       if let dictionary = snapshot.value as? [String : AnyObject] {
         self.countFollowing = dictionary.count
         self.delegate?.updateCountFollowing(self.countFollowing!)
-        
       }
     })
   }
   
   public func fetchCountFollowerUser(_ user : Users, completion : @escaping ((_ success : Bool) -> Void) ) {
-    
     ref.child("\(user.id!)").child("follower").observe(.value, with: {(snapshot) in
       if let dictionary = snapshot.value as? [String : AnyObject] {
         self.countFollower = dictionary.count

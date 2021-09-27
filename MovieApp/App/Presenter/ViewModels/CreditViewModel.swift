@@ -16,10 +16,11 @@ protocol CreditViewModelDelegate: AnyObject {
   func hideLoading()
 }
 
-
 class CreditViewModel {
   public weak var delegate : CreditViewModelDelegate?
   var count : Int?
+    
+    
   public func getList( _ cast : Cast) {
     delegate?.showLoading()
     let urlRequest = URL(string: "https://api.themoviedb.org/3/credit/\(cast.credit_id ?? "5d2b2910be4b3612f5ab00f6")?api_key=999fdf2ff164b33bed4aea14fa846a19" )
@@ -28,7 +29,6 @@ class CreditViewModel {
       AF.request(urlRequest!, method: .get, encoding: URLEncoding.httpBody, headers: .default).responseJSON(completionHandler: { (response) in
         switch response.result {
         case .success(let value):
-//          print(value)
           let json = JSON(value)
           let credit = CreditResponse(json)
           let person = credit?.person

@@ -18,6 +18,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet private weak var signUpButton: UIButton!
     @IBOutlet private weak var validEmailLabel: UILabel!
     @IBOutlet private weak var validPasswordLabel: UILabel!
+    @IBOutlet private weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,21 +26,8 @@ class SignUpViewController: UIViewController {
     }
     
     private func setupConfig() {
-        emailTextField.layer.borderWidth = 0.5
-        emailTextField.layer.cornerRadius = 10
-        emailTextField.layer.borderColor = UIColor.lightGray.cgColor
-        
-        userNameTextField.layer.borderWidth = 0.5
-        userNameTextField.layer.cornerRadius = 10
-        userNameTextField.layer.borderColor = UIColor.lightGray.cgColor
-        
-        passwordTextField.layer.borderWidth = 0.5
-        passwordTextField.layer.cornerRadius = 10
-        passwordTextField.layer.borderColor = UIColor.lightGray.cgColor
-        
-        layerView.layer.cornerRadius = 70
-        layerView.layer.maskedCorners = .layerMinXMinYCorner
-        signUpButton.layer.cornerRadius = 25
+        layerView.setGradientView()
+        layerView.makeCorner(radius: 70, corners: [.topLeft])
         emailTextField.addTarget(self, action: #selector(textFieldDidChangeSelection(_:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingChanged)
         
@@ -85,10 +73,10 @@ extension SignUpViewController : UITextFieldDelegate {
         if isValidEmail(email: emailTextField.text!) {
             
             validEmailLabel.isHidden = true
-            
         }else{
             validEmailLabel.isHidden = false
         }
+        
     }
     
     

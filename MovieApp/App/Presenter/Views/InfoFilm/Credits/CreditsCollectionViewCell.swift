@@ -17,11 +17,10 @@ class CreditsCollectionViewCell: UICollectionViewCell {
     var data : Movies? {
         didSet{
             if let data = data {
-                titleMovieLabel.text = "\(data.title!)"
-                countLabel.text = "\(data.vote_average!)"
+              
                 if let path = data.poster_path {
                     let url = URL(string: "https://image.tmdb.org/t/p/original/\(path)")
-                    imageBG.kf.setImage(with: url)
+                    imageBG.kf.setImage(with: url,  placeholder: UIImage(named: "placeholder"))
                 }
             }
         }
@@ -30,6 +29,15 @@ class CreditsCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         imageBG.layer.cornerRadius = 10
+    }
+    
+    func updateUI (_ movies : Movies) {
+        titleMovieLabel.text = movies.title
+        countLabel.text = "\(movies.vote_average!)"
+        if let path = movies.poster_path {
+            let url = URL(string: "https://image.tmdb.org/t/p/original/\(path)")
+            imageBG.kf.setImage(with: url,  placeholder: UIImage(named: "placeholder"))
+        }
     }
     
 }

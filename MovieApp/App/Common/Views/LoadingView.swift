@@ -18,8 +18,8 @@ open class LoadingView: NSObject {
     
     private func customProgressHUD() {
         SVProgressHUD.setDefaultMaskType(.custom)
-        SVProgressHUD.setDefaultAnimationType(.native)
-        SVProgressHUD.setDefaultStyle(.dark)
+        SVProgressHUD.setDefaultAnimationType(.flat)
+        SVProgressHUD.setDefaultStyle(.light)
         SVProgressHUD.setRingThickness(1.0)
         SVProgressHUD.setMaximumDismissTimeInterval(2.0)
         SVProgressHUD.setMaxSupportedWindowLevel(UIWindow.Level.alert + 1)

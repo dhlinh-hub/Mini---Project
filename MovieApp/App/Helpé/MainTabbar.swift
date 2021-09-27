@@ -7,46 +7,38 @@
 
 import UIKit
 
-class MainTabbar {
+final class MainTabbar {
     static func setupTabar() -> UITabBarController {
         let tabBC = UITabBarController()
-
-        let discoverVC = UINavigationController(rootViewController: DiscoverViewController())
-        discoverVC.tabBarItem = UITabBarItem(title: "Discover",
-                                             image: UIImage(systemName: "safari"),
-                                             selectedImage: UIImage(systemName: "safari.fill")?.withRenderingMode(.alwaysOriginal))
-        discoverVC.navigationBar.barTintColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1.00)
-        discoverVC.navigationBar.barStyle = .black
         
+        let discoverVC = DiscoverViewController()
+        discoverVC.tabBarItem = UITabBarItem(title: "",
+                                             image: UIImage(named: "ic_home0")?.withRenderingMode(.alwaysOriginal),
+                                             selectedImage: UIImage(named: "ic_home")?.withRenderingMode(.alwaysOriginal))
         
-        
-        
-        let collectionsVC = UINavigationController(rootViewController: CollectionsViewController())
-        collectionsVC.tabBarItem = UITabBarItem(title: "Collections", image: UIImage(systemName: "folder"), selectedImage: UIImage(systemName: "folder.fill")?.withRenderingMode(.alwaysOriginal))
-        collectionsVC.navigationBar.barTintColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1.00)
-        collectionsVC.navigationBar.barStyle = .black
-
+        let collectionsVC = CategoryViewController()
+        collectionsVC.tabBarItem = UITabBarItem(title: "",
+                                                image: UIImage(named: "ic_collec0")?.withRenderingMode(.alwaysOriginal),
+                                                selectedImage: UIImage(named: "ic_collec")?.withRenderingMode(.alwaysOriginal))
         
         
         let favoriteVC = UINavigationController(rootViewController: FavoriteViewController())
-        favoriteVC.tabBarItem = UITabBarItem(title: "Favorite", image: UIImage(systemName: "bookmark.circle"), selectedImage: UIImage(systemName: "bookmark.circle.fill")?.withRenderingMode(.alwaysOriginal))
-        favoriteVC.navigationBar.barTintColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1.00)
-        favoriteVC.navigationBar.barStyle = .black
+        favoriteVC.tabBarItem = UITabBarItem(title: "",
+                                             image: UIImage(named: "ic_heart0")?.withRenderingMode(.alwaysOriginal),
+                                             selectedImage: UIImage(named: "ic_heart")?.withRenderingMode(.alwaysOriginal))
         
         
         let profileVC = UINavigationController(rootViewController: ProfileViewController())
-        profileVC.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.circle"), selectedImage: UIImage(systemName: "person.circle.fill")?.withRenderingMode(.alwaysOriginal))
-        profileVC.navigationBar.barTintColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1.00)
-        profileVC.navigationBar.barStyle = .black
-        
-        
+        profileVC.tabBarItem = UITabBarItem(title: "",
+                                            image: UIImage(named: "ic_person")?.withRenderingMode(.alwaysOriginal),
+                                            selectedImage: UIImage(named: "ic_person0")?.withRenderingMode(.alwaysOriginal))
         
         tabBC.setViewControllers([discoverVC, collectionsVC, favoriteVC, profileVC], animated: true)
-        tabBC.tabBar.barTintColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1.00)
-        
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .normal)
-        
+        tabBC.tabBar.backgroundColor = .init(hex: "#161616")
+        //        tabBC.tabBar.barTintColor = UIColor.black
+        //        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.init(hex: "#FA7100")], for: .selected)
+        //        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.lightGray], for: .normal)
+        //
         return tabBC
     }
     

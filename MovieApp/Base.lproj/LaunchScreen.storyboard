@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,13 +19,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxl-38-dXr">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled" translatesAutoresizingMaskIntoConstraints="NO" id="HRp-EP-wJo">
-                                        <rect key="frame" x="0.0" y="246.5" width="414" height="403"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_logoApp" translatesAutoresizingMaskIntoConstraints="NO" id="HRp-EP-wJo">
+                                        <rect key="frame" x="0.0" y="269" width="414" height="224"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.047058823530000002" green="0.047058823530000002" blue="0.047058823530000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="HRp-EP-wJo" firstAttribute="centerY" secondItem="wxl-38-dXr" secondAttribute="centerY" id="Nmi-R4-HMl"/>
+                                    <constraint firstItem="HRp-EP-wJo" firstAttribute="centerX" secondItem="wxl-38-dXr" secondAttribute="centerX" id="9sd-Jo-kaa"/>
+                                    <constraint firstItem="HRp-EP-wJo" firstAttribute="centerY" secondItem="wxl-38-dXr" secondAttribute="centerY" multiplier="0.85" id="Nmi-R4-HMl"/>
                                     <constraint firstAttribute="trailing" secondItem="HRp-EP-wJo" secondAttribute="trailing" id="POH-Ld-uF9"/>
                                     <constraint firstItem="HRp-EP-wJo" firstAttribute="leading" secondItem="wxl-38-dXr" secondAttribute="leading" id="TmJ-1T-091"/>
                                 </constraints>
@@ -36,7 +36,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wxl-38-dXr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BoZ-0i-UhI"/>
-                            <constraint firstItem="HRp-EP-wJo" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.45" id="KA9-AG-bxE"/>
+                            <constraint firstItem="HRp-EP-wJo" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.25" id="KA9-AG-bxE"/>
                             <constraint firstAttribute="bottom" secondItem="wxl-38-dXr" secondAttribute="bottom" id="LN7-IV-11N"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wxl-38-dXr" secondAttribute="trailing" id="bBW-zY-g7j"/>
                             <constraint firstItem="wxl-38-dXr" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="fpk-ne-N7B"/>
@@ -49,7 +49,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Untitled" width="348" height="316"/>
+        <image name="img_logoApp" width="225" height="225"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

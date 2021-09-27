@@ -79,15 +79,10 @@ class UserViewModel {
                   self.delegate?.dataUserFollower(self.userFollower)
                   
                 }
-                
-                
               }
             }
           })
-          
-          
         }
-        
       }
     })
   }
@@ -107,13 +102,8 @@ class UserViewModel {
       Database.database().reference().child("user").child("\(user.id ?? "")").child("currentFollowing").setValue(true)
 
     })
+  Database.database().reference().child("user").child("\(user.id ?? "")").child("follower").child(uid!).setValue(uid!)
 
-    
-    Database.database().reference().child("user").child("\(user.id ?? "")").child("follower").child(uid!).setValue(uid!)
-//
-//    self.fetchUserLoging { _user in
-//
-//    }
     
   }
   
@@ -159,33 +149,7 @@ class UserViewModel {
       unfollowUser(user)
     }
     user.currentFollowing = !user.currentFollowing
-    
   }
-  
-//  public func fetchUserLoging(withCompletion: @escaping ((Users) -> Void)) {
-//    let uid = Auth.auth().currentUser?.uid
-//    Database.database().reference().child("user").observe(.value, with: {(snapshot) in
-//      if let dictionary = snapshot.value as? [String : AnyObject] {
-//
-//        for i in dictionary.keys {
-//          if i == uid {
-//            let data = dictionary["\(i)"] as? [String : AnyObject]
-//            let json = JSON(data!)
-//            if let userData = Users(json) {
-//              withCompletion(userData)
-//            }
-//
-//          }
-//        }
-//
-//      }
-//
-//    })
-//
-//  }
-  
-  
-  
 }
 
 protocol UserViewModelDelegate : AnyObject {

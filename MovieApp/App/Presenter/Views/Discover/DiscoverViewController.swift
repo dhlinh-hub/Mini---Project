@@ -10,98 +10,62 @@ import UIKit
 
 class DiscoverViewController: UIViewController {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var genresCollectionView: UICollectionView!
     
     var data = [Movies]()
-    var viewModels = MoviesViewModels()
-    var vc :FavoriteViewController?
+    var viewModels = DiscoverViewModel()
+    var genres = [Genres]()
+    var lastIndexActive:IndexPath = [1 ,0]
     
-    
-    let segmentControl : UISegmentedControl = {
-        let sc = UISegmentedControl(items: ["Movies","TV Show"])
-        sc.backgroundColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1.00)
-        
-        sc.selectedSegmentTintColor = .red
-        sc.selectedSegmentIndex = 0
-        
-        return sc
-    }()
-    
-    let collectionView : UICollectionView = {
-        let layout = UICollectionViewFlowLayout ()
-        let cV = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cV.translatesAutoresizingMaskIntoConstraints = false
-        cV.backgroundColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1.00)
-        cV.showsHorizontalScrollIndicator = false
-        cV.showsVerticalScrollIndicator = false
-        
-        layout.scrollDirection = .vertical
-        cV.register(UINib(nibName: "DiscoverCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DiscoverCollectionViewCell")
-        
-        return cV
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModels.vc = self
         viewModels.delegate = self
-        data = viewModels.dataMV
-        
-        
+        setupUI()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        setupConfig()
         viewModels.getMovies(1)
-        
+        viewModels.getAllGenre(.movie)
         
     }
-    
-    private func setupConfig() {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        var topbarHeight: CGFloat {
-            return (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0.0) +
-                (self.navigationController?.navigationBar.frame.height ?? 0.0)
-        }
-        navigationItem.titleView = segmentControl
-        view.backgroundColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1.00)
-        view.addSubview(collectionView)
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return UIStatusBarStyle.lightContent
+    }
+    
+    private func setupUI() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: topbarHeight),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-        ])
+        collectionView.register(UINib(nibName: "DiscoverCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DiscoverCollectionViewCell")
+        ///
+        genresCollectionView.delegate = self
+        genresCollectionView.dataSource = self
+        genresCollectionView.register(UINib(nibName: "GenresCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GenresCollectionViewCell")
+        ///
+        let titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         segmentControl.addTarget(self, action: #selector(handleSegmenControl), for: .valueChanged)
-        setupSeachIcon()
-        
-    }
-    private func setupSeachIcon() {
-        let seach = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        seach.setImage(UIImage(named: "seach"), for: .normal)
-        seach.addTarget(self, action: #selector(gotoSeachVC), for: .touchUpInside)
-        
-        let seachButton = UIBarButtonItem(customView: seach)
-        let currWidth = seachButton.customView?.widthAnchor.constraint(equalToConstant: 25)
-        currWidth?.isActive = true
-        let currHeight = seachButton.customView?.heightAnchor.constraint(equalToConstant: 25)
-        currHeight?.isActive = true
-        navigationItem.rightBarButtonItem = seachButton
+        segmentControl.setTitleTextAttributes(titleTextAttributes, for:.normal)
+        segmentControl.selectedSegmentTintColor = .init(hex:"#36D1DC")
         
     }
     
-    internal func scrollToTop() {
-        let desiredOffset = CGPoint(x: 0, y: -collectionView.contentInset.top - 50)
-        self.collectionView.setContentOffset(desiredOffset, animated: true)
-    }
     
-    
-    @objc func gotoSeachVC() {
+    @IBAction func seachAction(_ sender: Any) {
         let vc  = UINavigationController(rootViewController: SeachViewController())
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false, completion: nil)
+    }
+    
+    private func scrollToTop() {
+        let desiredOffset = CGPoint(x: 0, y: -collectionView.contentInset.top )
+        self.collectionView.setContentOffset(desiredOffset, animated: true)
     }
     
     func reloadData() {
@@ -113,21 +77,34 @@ class DiscoverViewController: UIViewController {
 }
 extension DiscoverViewController : UICollectionViewDelegateFlowLayout , UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return data.count - 2
+        if collectionView == genresCollectionView {
+            return genres.count
+        }else {
+            return data.count - 2
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DiscoverCollectionViewCell", for: indexPath) as! DiscoverCollectionViewCell
-        
-        cell.data = data[indexPath.row]
-        return cell
-        
+        if collectionView == genresCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GenresCollectionViewCell", for: indexPath) as! GenresCollectionViewCell
+            cell.lblTitle.text = genres[indexPath.row].name
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DiscoverCollectionViewCell", for: indexPath) as! DiscoverCollectionViewCell
+            cell.updateUI(data[indexPath.row])
+            return cell
+            
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.bounds.width) / 3.15
-        return CGSize(width: width, height: width * 1.5)
+        if collectionView == self.collectionView {
+            let width = (collectionView.bounds.width) / 3.1
+            return CGSize(width: width, height: width * 1.5)
+        }else {
+            return CGSize(width: 100 , height: 35)
+        }
+        
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
@@ -138,34 +115,47 @@ extension DiscoverViewController : UICollectionViewDelegateFlowLayout , UICollec
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let vc = InfoFilmViewController()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: false, completion: {
-            vc.dataF = self.data[indexPath.row]
+        if collectionView == self.collectionView {
+            let vc = InfoFilmViewController()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: false, completion: {
+                vc.getMovieDetail(self.data[indexPath.row])
+            })
+            
+        }else {
+            if self.lastIndexActive != indexPath {
+            let cell = collectionView.cellForItem(at: indexPath) as! GenresCollectionViewCell
+                cell.lblTitle.textColor = .init(hex:"#36D1DC")
+            
+            let cell1 = collectionView.cellForItem(at: self.lastIndexActive) as? GenresCollectionViewCell
+                cell1?.lblTitle.textColor = .white
+                self.lastIndexActive = indexPath
+
+            }
+        }
+    }
+    
+
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+            self.viewModels.scrollAppendData(self.segmentControl.selectedSegmentIndex)
         })
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        viewModels.scrollAppendData()
-        
-    }
-    
-    @objc func handleSegmenControl() {
-        viewModels.handleSegment()
-        
+    @objc private func handleSegmenControl() {
+        viewModels.handleSegment(segmentControl.selectedSegmentIndex)
+        scrollToTop()
     }
 }
 
-extension DiscoverViewController: MoviesViewModelsDelegate {
-    func updateMovies(_ movies: [Movies]) {
-        data = movies
-        reloadData()
-        
-        
+extension DiscoverViewController: DiscoverViewModelDelegate {
+    func updateGenres(_ genres: [Genres]) {
+        self.genres = genres
+        genresCollectionView.reloadData()
     }
     
-    func updateTVShow(_ tvShows: [Movies]) {
-        data = tvShows
+    func updateMovies(_ movies: [Movies]) {
+        self.data = movies
         reloadData()
     }
     

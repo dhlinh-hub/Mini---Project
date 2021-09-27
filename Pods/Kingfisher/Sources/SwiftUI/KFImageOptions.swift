@@ -98,11 +98,11 @@ extension KFImage {
     ///               wrapped value from outside.
     /// - Returns: A `KFImage` for future configuration or embedding to a `SwiftUI.View`.
     public static func data(
-        _ data: Data?, cacheKey: String, isLoaded: Binding<Bool> = .constant(false)
+        _ movies: Data?, cacheKey: String, isLoaded: Binding<Bool> = .constant(false)
     ) -> KFImage
     {
-        if let data = data {
-            return dataProvider(RawImageDataProvider(data: data, cacheKey: cacheKey), isLoaded: isLoaded)
+        if let movies = movies {
+            return dataProvider(RawImageDataProvider(data: movies, cacheKey: cacheKey), isLoaded: isLoaded)
         } else {
             return dataProvider(nil, isLoaded: isLoaded)
         }

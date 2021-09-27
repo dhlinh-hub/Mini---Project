@@ -54,7 +54,7 @@ extension CreditsViewController : UICollectionViewDelegateFlowLayout, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CreditsCollectionViewCell", for: indexPath) as! CreditsCollectionViewCell
-        cell.data = data[indexPath.row]
+        cell.updateUI(data[indexPath.row])
         
         return cell
     }
@@ -75,7 +75,7 @@ extension CreditsViewController : UICollectionViewDelegateFlowLayout, UICollecti
         let vc = InfoFilmViewController()
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: false, completion: {
-            vc.dataF = self.data[indexPath.row]
+            vc.getMovieDetail(self.data[indexPath.row])
         })
     }
 }
