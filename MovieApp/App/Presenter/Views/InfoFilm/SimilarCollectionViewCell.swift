@@ -9,12 +9,11 @@ import UIKit
 import Kingfisher
 
 class SimilarCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet private weak var imageMovie: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageMovie.layer.cornerRadius = 15
+        imageMovie.layer.cornerRadius = 10
     }
     
     public func updateUI(_ movie: Movies){

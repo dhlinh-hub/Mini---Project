@@ -21,10 +21,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleAspectFit" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0d-LY-sSP">
-                    <rect key="frame" x="283.5" y="48" width="115.5" height="22"/>
+                    <rect key="frame" x="293.5" y="60" width="115.5" height="22"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Series Movie">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <imageReference key="image" image="chevron.right" catalog="system" renderingMode="original"/>
+                        <imageReference key="image" image="chevron.right" catalog="system"/>
                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                     </state>
                     <connections>
@@ -32,7 +33,7 @@
                     </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hjr-vn-ReC">
-                    <rect key="frame" x="5" y="104" width="404" height="792"/>
+                    <rect key="frame" x="5" y="89" width="404" height="807"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mFn-xB-VPs">
                         <size key="itemSize" width="128" height="128"/>
@@ -51,9 +52,9 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.086274509799999996" green="0.086274509799999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h0d-LY-sSP" secondAttribute="trailing" constant="15" id="2Zw-f9-PLO"/>
-                <constraint firstItem="hjr-vn-ReC" firstAttribute="top" secondItem="869-y2-asD" secondAttribute="bottom" constant="30" id="Cyf-XD-AmS"/>
-                <constraint firstItem="h0d-LY-sSP" firstAttribute="centerY" secondItem="869-y2-asD" secondAttribute="centerY" id="Tsg-I0-HjP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h0d-LY-sSP" secondAttribute="trailing" constant="5" id="2Zw-f9-PLO"/>
+                <constraint firstItem="hjr-vn-ReC" firstAttribute="top" secondItem="869-y2-asD" secondAttribute="bottom" constant="15" id="Cyf-XD-AmS"/>
+                <constraint firstItem="h0d-LY-sSP" firstAttribute="centerY" secondItem="869-y2-asD" secondAttribute="centerY" multiplier="1.2" id="Tsg-I0-HjP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hjr-vn-ReC" secondAttribute="trailing" constant="5" id="Yn6-s0-Oha"/>
                 <constraint firstItem="869-y2-asD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="cCb-i5-r0w"/>
                 <constraint firstItem="hjr-vn-ReC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="5" id="eqn-FN-IMU"/>

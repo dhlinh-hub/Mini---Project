@@ -45,6 +45,7 @@ class SeachViewController: UIViewController {
         seachbar.sizeToFit()
         seachbar.placeholder = "Search Movies"
         seachbar.delegate = self
+        seachbar.backgroundColor = .init(hex: "#161616")
         navigationItem.titleView = seachbar
         
         view.addSubview(tableView)
@@ -96,7 +97,7 @@ extension SeachViewController : UITableViewDataSource , UITableViewDelegate {
         let vc = InfoFilmViewController()
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false, completion: {
-            vc.data = self.data[indexPath.row]
+            vc.getMovieDetail(self.data[indexPath.row])
         })
     }
 }

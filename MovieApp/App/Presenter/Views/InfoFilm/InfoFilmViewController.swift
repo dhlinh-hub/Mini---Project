@@ -61,7 +61,7 @@ class InfoFilmViewController: UIViewController {
                     
                 }
                 if  data.bookmark {
-                    tagButton.image = UIImage(systemName: "bookmark.fill")?.withRenderingMode(.alwaysOriginal)
+                    tagButton.image = UIImage(named: "ic_unsave")
                     
                 }
             }
@@ -81,9 +81,11 @@ class InfoFilmViewController: UIViewController {
         viewModels.delegate = self
         playerVIew.delegate = self
         ratingView.settings.fillMode = .half
+        ratingView.rating = 1
         ratingView.didTouchCosmos = { rating in
             self.saveRating(rating)
         }
+    
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -120,7 +122,8 @@ class InfoFilmViewController: UIViewController {
         }
         ///
         if  movie.bookmark {
-            tagButton.image = UIImage(systemName: "bookmark")?.withRenderingMode(.alwaysOriginal)
+            tagButton.image = UIImage(named: "ic_save")
+            
         }
     }
     
@@ -148,12 +151,12 @@ class InfoFilmViewController: UIViewController {
     }
     
     internal func bookMarkIsSelect () {
-        tagButton.image = UIImage(systemName: "bookmark.fill")?.withRenderingMode(.alwaysOriginal)
+        tagButton.image = UIImage(named: "ic_unsave")
         UIView.transition(with: tagButton, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
         
     }
     internal func bookMarkDeSelect () {
-        tagButton.image = UIImage(systemName: "bookmark")?.withRenderingMode(.alwaysOriginal)
+        tagButton.image = UIImage(named: "ic_save")
         UIView.transition(with: tagButton, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
         
     }
@@ -246,7 +249,7 @@ extension InfoFilmViewController : UICollectionViewDelegateFlowLayout , UICollec
         let size = collectionView.bounds.height
         let height = similarCollectionView.bounds.height
         if collec == similarCollectionView {
-            return CGSize(width: height*0.75, height: height)
+            return CGSize(width: height*0.71, height: height )
         }else{
             return CGSize(width: size/2 , height: size)
         }
@@ -302,6 +305,7 @@ extension InfoFilmViewController : InfoMovieViewModelsDelegate {
         switch arr.count {
         case 0:
             titleGenner.isHidden = true
+            lblGener.isHidden = true
         case 1:
             lblGener.text = "\(arr[0])"
         case 2:

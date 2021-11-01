@@ -6,11 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imgBackGround: UIImageView!
     @IBOutlet weak var lblOverview: UILabel!
-    @IBOutlet weak var layerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,5 +21,6 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         imgBackGround.image = UIImage(named: collec.image!)
         lblOverview.text = collec.discrip
     }
-
+    
+   
 }

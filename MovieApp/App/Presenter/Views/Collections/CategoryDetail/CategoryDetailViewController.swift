@@ -29,6 +29,8 @@ class CategoryDetailViewController: UIViewController {
     @IBAction func closeAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
 }
 
 extension CategoryDetailViewController : UICollectionViewDelegate , UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

@@ -27,6 +27,12 @@
 		040CF15E2692FF2100820316 /* FollowingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040CF15C2692FF2100820316 /* FollowingTableViewCell.swift */; };
 		040CF15F2692FF2100820316 /* FollowingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040CF15D2692FF2100820316 /* FollowingTableViewCell.xib */; };
 		040CF161269300A500820316 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040CF160269300A500820316 /* UserViewModel.swift */; };
+		0413691F270993F5004898D2 /* SeachSeriesMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0413691D270993F5004898D2 /* SeachSeriesMovieViewController.swift */; };
+		04136920270993F5004898D2 /* SeachSeriesMovieViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0413691E270993F5004898D2 /* SeachSeriesMovieViewController.xib */; };
+		04136923270996A4004898D2 /* SeriesMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04136922270996A4004898D2 /* SeriesMovie.swift */; };
+		0413692527099A49004898D2 /* SeachSeriesMovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0413692427099A49004898D2 /* SeachSeriesMovieViewModel.swift */; };
+		041369282709A316004898D2 /* SeriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041369262709A316004898D2 /* SeriesCell.swift */; };
+		041369292709A316004898D2 /* SeriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 041369272709A316004898D2 /* SeriesCell.xib */; };
 		041CC5E626957D6F00DA20AA /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041CC5E526957D6F00DA20AA /* LoadingView.swift */; };
 		042575DD2681E6F700700A11 /* CastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042575DB2681E6F700700A11 /* CastCollectionViewCell.swift */; };
 		042575DE2681E6F700700A11 /* CastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042575DC2681E6F700700A11 /* CastCollectionViewCell.xib */; };
@@ -108,6 +114,12 @@
 		040CF15C2692FF2100820316 /* FollowingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingTableViewCell.swift; sourceTree = "<group>"; };
 		040CF15D2692FF2100820316 /* FollowingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FollowingTableViewCell.xib; sourceTree = "<group>"; };
 		040CF160269300A500820316 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		0413691D270993F5004898D2 /* SeachSeriesMovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachSeriesMovieViewController.swift; sourceTree = "<group>"; };
+		0413691E270993F5004898D2 /* SeachSeriesMovieViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeachSeriesMovieViewController.xib; sourceTree = "<group>"; };
+		04136922270996A4004898D2 /* SeriesMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesMovie.swift; sourceTree = "<group>"; };
+		0413692427099A49004898D2 /* SeachSeriesMovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachSeriesMovieViewModel.swift; sourceTree = "<group>"; };
+		041369262709A316004898D2 /* SeriesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesCell.swift; sourceTree = "<group>"; };
+		041369272709A316004898D2 /* SeriesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeriesCell.xib; sourceTree = "<group>"; };
 		041CC5E526957D6F00DA20AA /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		042575DB2681E6F700700A11 /* CastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCollectionViewCell.swift; sourceTree = "<group>"; };
 		042575DC2681E6F700700A11 /* CastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -235,6 +247,7 @@
 				040CF160269300A500820316 /* UserViewModel.swift */,
 				0445852B2694367B0035D6BE /* InfoUserViewModel.swift */,
 				0494396226980AC0001452AD /* CreditViewModel.swift */,
+				0413692427099A49004898D2 /* SeachSeriesMovieViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -242,6 +255,7 @@
 		04069E11267C355500F6B551 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0413691C270993BB004898D2 /* SeriesMovie */,
 				04A8F6D326F78E8600B7914B /* Collections */,
 				04BD4CD826F6E4BD00DD1559 /* Seach */,
 				04069E31267C5B5300F6B551 /* SignUp */,
@@ -361,6 +375,25 @@
 				040CF14F2692AEB300820316 /* FindFriendViewController.swift */,
 			);
 			path = FindFriend;
+			sourceTree = "<group>";
+		};
+		0413691C270993BB004898D2 /* SeriesMovie */ = {
+			isa = PBXGroup;
+			children = (
+				04136921270994DC004898D2 /* Cell */,
+				0413691D270993F5004898D2 /* SeachSeriesMovieViewController.swift */,
+				0413691E270993F5004898D2 /* SeachSeriesMovieViewController.xib */,
+			);
+			path = SeriesMovie;
+			sourceTree = "<group>";
+		};
+		04136921270994DC004898D2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				041369262709A316004898D2 /* SeriesCell.swift */,
+				041369272709A316004898D2 /* SeriesCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		04496FA72691F50300C97562 /* FollowScreen */ = {
@@ -532,6 +565,7 @@
 				04496FA326918F2B00C97562 /* Users.swift */,
 				04BD4CDE26F6E75300DD1559 /* Genres.swift */,
 				0490092C26F8B76B0034FB65 /* Collections.swift */,
+				04136922270996A4004898D2 /* SeriesMovie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -635,6 +669,7 @@
 				04496FAC2691F56300C97562 /* FollowViewController.xib in Resources */,
 				04069E39267C5BA300F6B551 /* SignUpViewController.xib in Resources */,
 				04BD4CE126F70EE700DD1559 /* DiscoverViewController.xib in Resources */,
+				041369292709A316004898D2 /* SeriesCell.xib in Resources */,
 				046736822693150400DE5F0C /* InfoUserViewController.xib in Resources */,
 				04069E2D267C37F000F6B551 /* LoginViewController.xib in Resources */,
 				04F51FC827009A94005A84D6 /* CategoryDetailViewController.xib in Resources */,
@@ -643,6 +678,7 @@
 				042575DE2681E6F700700A11 /* CastCollectionViewCell.xib in Resources */,
 				04612DB526809710008FDD9E /* ProfileTableViewCell.xib in Resources */,
 				040CF15F2692FF2100820316 /* FollowingTableViewCell.xib in Resources */,
+				04136920270993F5004898D2 /* SeachSeriesMovieViewController.xib in Resources */,
 				04B821D6267B3CD100DC944C /* LaunchScreen.storyboard in Resources */,
 				042575FA268391B300700A11 /* ChangePasswordViewController.xib in Resources */,
 				04612DA726806A01008FDD9E /* FavoriteViewController.xib in Resources */,
@@ -733,14 +769,17 @@
 				046736812693150400DE5F0C /* InfoUserViewController.swift in Sources */,
 				04069E2C267C37F000F6B551 /* LoginViewController.swift in Sources */,
 				04612DB426809710008FDD9E /* ProfileTableViewCell.swift in Sources */,
+				0413692527099A49004898D2 /* SeachSeriesMovieViewModel.swift in Sources */,
 				04612DAA26806EC8008FDD9E /* SeachViewController.swift in Sources */,
 				04069E2F267C4A5F00F6B551 /* MainTabbar.swift in Sources */,
 				046CC6E0268DCD6000F66091 /* SeachViewModels.swift in Sources */,
 				041CC5E626957D6F00DA20AA /* LoadingView.swift in Sources */,
 				0470DB19268D5A6D001F413C /* InfoMovieViewModels.swift in Sources */,
+				04136923270996A4004898D2 /* SeriesMovie.swift in Sources */,
 				042575F9268391B300700A11 /* ChangePasswordViewController.swift in Sources */,
 				040CF14C2692AE9700820316 /* FollowingViewController.swift in Sources */,
 				04069E38267C5BA300F6B551 /* SignUpViewController.swift in Sources */,
+				0413691F270993F5004898D2 /* SeachSeriesMovieViewController.swift in Sources */,
 				04BD4CDF26F6E75300DD1559 /* Genres.swift in Sources */,
 				04BD4CDC26F6E55700DD1559 /* GenresCollectionViewCell.swift in Sources */,
 				04B821CA267B3CCE00DC944C /* AppDelegate.swift in Sources */,
@@ -756,6 +795,7 @@
 				04612D9B26803564008FDD9E /* DiscoverCollectionViewCell.swift in Sources */,
 				042575F5268343E200700A11 /* FavoriteTableViewCell.swift in Sources */,
 				04496FA426918F2B00C97562 /* Users.swift in Sources */,
+				041369282709A316004898D2 /* SeriesCell.swift in Sources */,
 				042575F2268314B800700A11 /* FireBaseManager.swift in Sources */,
 				0490092D26F8B76B0034FB65 /* Collections.swift in Sources */,
 				040CF1502692AEB300820316 /* FindFriendViewController.swift in Sources */,

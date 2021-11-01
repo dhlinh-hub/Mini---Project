@@ -37,8 +37,7 @@ class SIAccountViewController: UIViewController {
     private func setupUI() {
         layerView.setGradientView()
         layerView.layer.masksToBounds = true
-        layerView.makeCorner(radius: 70, corners: [.topLeft])
-//        signInButton.setGradientView()
+        layerView.makeCorner(radius: 50, corners: [.topLeft])
         eyeButton.setImage(show, for: .normal)
 
         

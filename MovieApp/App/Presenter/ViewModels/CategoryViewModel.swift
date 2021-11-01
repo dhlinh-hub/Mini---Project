@@ -35,6 +35,30 @@ class CategoryViewModel {
         }
     }
     
+    public func getSeriesDetail(_ serires : SeriesMovie){
+        delegate?.showLoading()
+        let urlRequest = URL(string:"https://api.themoviedb.org/3/collection/\(serires.id ?? 0)?api_key=999fdf2ff164b33bed4aea14fa846a19&language=en-US" )
+        let queue = DispatchQueue(label: "com.queue", qos: .background, attributes: .concurrent)
+        queue.async {
+            AF.request(urlRequest!, method: .get, encoding: URLEncoding.httpBody, headers: .default).responseJSON(completionHandler: { (response) in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    let movies = SeriesMovie(json)
+                    if let data = movies?.parts {
+                        self.delegate?.updateDataCategory(data)
+                        self.delegate?.hideLoading()
+
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            })
+        }
+    }
+    
+    
+    
 }
 protocol CategoryViewModelDelegate: AnyObject {
     func updateDataCategory(_ movie : [Movies] )

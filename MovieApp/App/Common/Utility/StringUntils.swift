@@ -33,12 +33,7 @@ extension String {
         if string.contains("Đ") {
             string = string.replacingOccurrences(of: "Đ", with: "D")
         }
-        if string.contains("["){
-            string = string.replacingOccurrences(of: "[", with: "")
-        }
-        if string.contains("]"){
-            string = string.replacingOccurrences(of: "]", with: "")
-        }
+
       
         
         /// use `.diacriticInsensitive` to remove diacritic marks

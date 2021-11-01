@@ -16,6 +16,7 @@ class CategoryViewController: UIViewController {
         Collections(image: "upcoming", discrip: "Upcoming Movies", type: .upcoming),
         Collections(image: "toprated", discrip: "Top Rated Movies Today", type: .top_rated),
     ]
+    
     let viewModel = CategoryViewModel()
     var data = [Movies]()
     
@@ -30,6 +31,9 @@ class CategoryViewController: UIViewController {
     }
     
     @IBAction func seriesMovieAction(_ sender: Any) {
+        let vc = SeachSeriesMovieViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true, completion: nil)
     }
 }
 
@@ -54,7 +58,7 @@ extension CategoryViewController : UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 10, height: collectionView.frame.height/2.3)
+        return CGSize(width: collectionView.frame.width - 10, height: collectionView.frame.height/2.75)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

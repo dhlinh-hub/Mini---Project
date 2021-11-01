@@ -73,6 +73,16 @@ class DiscoverViewController: UIViewController {
             self.collectionView.reloadData()
         }
     }
+    /// call api khi đến cuối collection
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.viewModels.scrollAppendData(self.segmentControl.selectedSegmentIndex)
+    }
+    
+
+    @objc private func handleSegmenControl() {
+        viewModels.handleSegment(segmentControl.selectedSegmentIndex)
+        scrollToTop()
+    }
     
 }
 extension DiscoverViewController : UICollectionViewDelegateFlowLayout , UICollectionViewDataSource, UICollectionViewDelegate {
@@ -133,19 +143,10 @@ extension DiscoverViewController : UICollectionViewDelegateFlowLayout , UICollec
 
             }
         }
+        
     }
     
-
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            self.viewModels.scrollAppendData(self.segmentControl.selectedSegmentIndex)
-        })
-    }
     
-    @objc private func handleSegmenControl() {
-        viewModels.handleSegment(segmentControl.selectedSegmentIndex)
-        scrollToTop()
-    }
 }
 
 extension DiscoverViewController: DiscoverViewModelDelegate {

@@ -27,7 +27,7 @@ class SignUpViewController: UIViewController {
     
     private func setupConfig() {
         layerView.setGradientView()
-        layerView.makeCorner(radius: 70, corners: [.topLeft])
+        layerView.makeCorner(radius: 50, corners: [.topLeft])
         emailTextField.addTarget(self, action: #selector(textFieldDidChangeSelection(_:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldDidEndEditing(_:)), for: .editingChanged)
         

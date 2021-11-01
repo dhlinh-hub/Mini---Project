@@ -60,19 +60,9 @@ class ProfileViewController: UIViewController {
         })
     }
     private func  setupConfig() {
-        let titleLbl = UILabel(frame: CGRect (x: 0, y: 0, width: view.bounds.width - 30, height: view.bounds.height))
-        titleLbl.textColor = .white
-        titleLbl.text = "Profile"
-        titleLbl.font = UIFont(name: "Hiragino Sans W6", size: 23)
-        navigationItem.titleView = titleLbl
         
-        
-        imageUser.layer.cornerRadius = 50
-        cameraButton.layer.cornerRadius = 15
-        followingButton.layer.cornerRadius = 10
-        followerButton.layer.cornerRadius = 10
+
         tableView.tableFooterView = UIView()
-        tableView.backgroundColor = UIColor(red: 0.05, green: 0.05, blue: 0.05, alpha: 1.00)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib.init(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: "ProfileTableViewCell")
