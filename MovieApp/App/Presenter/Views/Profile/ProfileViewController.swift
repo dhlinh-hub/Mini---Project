@@ -60,8 +60,6 @@ class ProfileViewController: UIViewController {
         })
     }
     private func  setupConfig() {
-        
-
         tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self

@@ -56,13 +56,10 @@ class CategoryViewModel {
             })
         }
     }
-    
-    
-    
 }
+
 protocol CategoryViewModelDelegate: AnyObject {
     func updateDataCategory(_ movie : [Movies] )
     func showLoading()
     func hideLoading()
-
 }
